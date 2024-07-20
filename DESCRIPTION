@@ -1,11 +1,32 @@
 Package: ensumr
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Analyse Enquate Data Easily
+Version: 0.5.0
+Authors@R: 
+    person("Toshikazu", "Matsumura", , 
+           "matutosi@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2306-6355"))
+Description: Analyse Enquate Data Easily. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/matutosi/ensumr, https://matutosi.github.io/ensumr/
+Imports: 
+  dplyr,
+  moranajp,
+  purrr,
+  rlang,
+  stringi,
+  stringr,
+  tibble,
+  tidyr,
+  tidyselect
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Language: en-US
+Depends: 
+    R (>= 2.10)
+RoxygenNote: 7.3.1
+Roxygen: list(markdown = TRUE)

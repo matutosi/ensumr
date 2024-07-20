@@ -1,2 +1,12 @@
 ^.*\.Rproj$
+^CRAN-SUBMISSION$
+^LICENSE\.md$
+^README\.Rmd$
 ^\.Rproj\.user$
+^\.github$
+^\tools$
+^_pkgdown\.yml$
+^cran-comments\.md$
+^data-raw$
+^docs$
+^pkgdown$
