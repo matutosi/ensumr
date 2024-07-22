@@ -1,0 +1,75 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ensumr
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of ensumr is to analyse enquate data easily. 
+
+## Installation
+
+You can install the development version of ensumr from [GitHub](https://github.com/) with:
+
+```{r setup, include = FALSE}
+devtools::load_all(".")
+```
+
+
+```{r, eval = FALSE}
+  # install.packages("remotes")
+remotes::install_github("matutosi/ensumr")
+```
+
+## Example
+
+You can use dummy data.
+
+```{r dummy_data}
+library(ensumr)
+dummy_data
+```
+
+You can show the summary of enquate by `enq_summary()`.
+
+```{r enq_summary}
+enq_summary(dummy_data)
+enq_summary(dummy_data, simplify = TRUE)
+```
+
+You can analyse a item by `enq_simple()`, which can be used for both singular or multiple options. 
+When the column name has "_ord", the result will be arranged by options. 
+Otherwise, the results will be arranged by counted numbers.
+When multiple options will be separated by deliminator (default is ";"). 
+
+```{r enq_simple}
+enq_simple(dummy_data, "q1")
+enq_simple(dummy_data, "q2_ord")
+enq_simple(dummy_data, "q3_multi")
+```
+
+You can analyse two item (cross tabulation) by `enq_cross()`. 
+
+```{r enq_cross}
+enq_cross(dummy_data, "q1", "q2_ord")
+enq_cross(dummy_data, "q1", "q3_multi")
+enq_cross(dummy_data, "q2_ord", "q3_multi", arrange_total = FALSE)
+enq_cross_split(dummy_data, "q1", "q2_ord", "q3_multi")
+```
+
+## Citation
+
+Toshikazu Matsumura (2024) ensumr. Analyse Enquate Data Easily. https://github.com/matutosi/ensumr/.
