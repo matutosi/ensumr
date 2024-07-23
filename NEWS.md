@@ -1,3 +1,3 @@
-# ensumr 0.1.0
+# ensumr 0.5.0
 
-* Initial CRAN submission.
+* Initial submission.
