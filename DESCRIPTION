@@ -13,7 +13,6 @@ LazyData: true
 URL: https://github.com/matutosi/ensumr, https://matutosi.github.io/ensumr/
 Imports: 
   dplyr,
-  moranajp,
   purrr,
   rlang,
   stringi,
