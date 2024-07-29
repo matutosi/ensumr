@@ -323,6 +323,18 @@ enq_cross_split(dummy_data, "q1", "q2_ord", "q3_multi")
 #> # ℹ 1 more variable: total <int>
 ```
 
+``` r
+df <- dummy_data
+bigram <- function(df, col = "", delim = " "){
+  id <- "id"
+  "word_1"
+  df |>
+    tibble::rownames_to_column(var = id) |>
+    dplyr::select({{ id }}, contains(col)) |>
+    tidyr::separate_longer_delim(contains(col), delim = delim)
+}
+```
+
 ## Citation
 
 Toshikazu Matsumura (2024) ensumr. Analyse Enquate Data Easily.
