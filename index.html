@@ -338,6 +338,16 @@
 <span><span class="co">#&gt; 12 t                 1            0                0             0            0</span></span>
 <span><span class="co">#&gt; 13 y                 0            0                1             0            0</span></span>
 <span><span class="co">#&gt; # ℹ 1 more variable: total &lt;int&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">dummy_data</span></span>
+<span><span class="va">bigram</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">df</span>, <span class="va">col</span> <span class="op">=</span> <span class="st">""</span>, <span class="va">delim</span> <span class="op">=</span> <span class="st">" "</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">id</span> <span class="op">&lt;-</span> <span class="st">"id"</span></span>
+<span>  <span class="st">"word_1"</span></span>
+<span>  <span class="va">df</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html" class="external-link">rownames_to_column</a></span><span class="op">(</span>var <span class="op">=</span> <span class="va">id</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="op">{</span><span class="op">{</span> <span class="va">id</span> <span class="op">}</span><span class="op">}</span>, <span class="fu">contains</span><span class="op">(</span><span class="va">col</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate_longer_delim.html" class="external-link">separate_longer_delim</a></span><span class="op">(</span><span class="fu">contains</span><span class="op">(</span><span class="va">col</span><span class="op">)</span>, delim <span class="op">=</span> <span class="va">delim</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
